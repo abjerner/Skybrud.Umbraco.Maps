@@ -89,7 +89,7 @@ namespace Skybrud.Umbraco.Maps {
             switch (format) {
 
                 case "polyline":
-                    return GooglePolylineAlgoritm.Decode<IPoint>(obj.GetString("path"));
+                    return GooglePolylineAlgoritm.Decode<IPoint>(obj.GetString("position"));
 
                 default:
                     throw new Exception("Unknown geometry type: " + format);
