@@ -1,0 +1,61 @@
+﻿{
+  "javascript": [
+    "/App_Plugins/Skybrud.Umbraco.Maps/Scripts/Controllers/Map.js",
+    "/App_Plugins/Skybrud.Umbraco.Maps/Scripts/Controllers/Properties.js",
+    "/App_Plugins/Skybrud.Umbraco.Maps/Scripts/Controllers/ContentTypePicker.js"
+  ],
+  "css": [
+    "/App_Plugins/Skybrud.Umbraco.Maps/Styles/Default.css"
+  ],
+  "propertyEditors": [
+    {
+      "alias": "Skybrud.Umbraco.Maps",
+      "name": "Skybrud - Map Editor",
+      "editor": {
+        "view": "/App_Plugins/Skybrud.Umbraco.Maps/Views/Map.html",
+        "valueType": "JSON",
+        "hideLabel": true
+      },
+      "prevalues": {
+        "fields": [
+          {
+            "key": "apiKey",
+            "label": "API key",
+            "description": "Enter your Google Maps API key.",
+            "view": "textstring"
+          },
+          {
+            "key": "allowedTypes",
+            "label": "Allowed content types",
+            "description": "Select the content types should be allowed.",
+            "view": "/App_Plugins/Skybrud.Umbraco.Maps/Views/Editors/ContentTypePicker.html"
+          }
+        ]
+      }
+    },
+    {
+      "alias": "Skybrud.Umbraco.Maps.Geometry.Point",
+      "name": "Skybrud - Map Editor - Point",
+      "editor": {
+        "view": "/App_Plugins/Skybrud.Umbraco.Maps/Views/Editors/Point.html",
+        "valueType": "JSON"
+      }
+    },
+    {
+      "alias": "Skybrud.Umbraco.Maps.Geometry.LineString",
+      "name": "Skybrud - Map Editor - Line String",
+      "editor": {
+        "view": "/App_Plugins/Skybrud.Umbraco.Maps/Views/Editors/LineString.html",
+        "valueType": "JSON"
+      }
+    },
+    {
+      "alias": "Skybrud.Umbraco.Maps.Geometry.Polygon",
+      "name": "Skybrud - Map Editor - Polygon",
+      "editor": {
+        "view": "/App_Plugins/Skybrud.Umbraco.Maps/Views/Editors/Polygon.html",
+        "valueType": "JSON"
+      }
+    }
+  ]
+}

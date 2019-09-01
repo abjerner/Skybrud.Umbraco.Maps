@@ -1,0 +1,55 @@
+﻿.sky-map-editor {
+
+    .map {
+        height: 450px;
+    }
+
+    .types {
+        flex: 1;
+
+        button + button {
+            margin-left: 10px;
+        }
+    }
+
+    .toolbar {
+        margin-bottom: 10px;
+        display: flex;
+    }
+
+    .delete-menu {
+        position: absolute;
+        background: white;
+        padding: 3px;
+        color: #666;
+        font-weight: bold;
+        border: 1px solid #999;
+        font-family: sans-serif;
+        font-size: 12px;
+        box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.3);
+        margin-top: -10px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    table.table.list {
+        margin-top: 10px;
+    }
+
+    &.fullscreen {
+        position: absolute;
+        left: 0;
+        z-index: 9001;
+        top: 0;
+        right: 0;
+        background: #fff;
+        padding: 10px;
+    }
+
+}
+
+.sky-maps-content-type-picker {
+    .umb-child-selector__children-container {
+        margin-left: 0;
+    }
+}

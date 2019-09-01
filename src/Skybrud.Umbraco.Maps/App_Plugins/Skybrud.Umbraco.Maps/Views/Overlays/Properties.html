@@ -1,0 +1,39 @@
+﻿<div class="Manifests" ng-controller="Skybrud.Maps.Properties.Controller">
+    <form name="propertiesForm" ng-submit="save()" novalidate val-form-manager>
+        <umb-editor-view>
+            <umb-editor-header
+                name="data.name"
+                alias="data.alias"
+                icon="data.icon"
+                hide-icon="{{hideIcon}}"
+                hide-alias="hideAlias"
+                name-locked="nameLocked"
+                hide-description="true">
+            </umb-editor-header>
+            <umb-editor-container>
+                <umb-box>
+                    <umb-box-content>
+                        <umb-property property="property" ng-repeat="property in data.properties">
+                            <umb-property-editor model="property"></umb-property-editor>
+                        </umb-property>
+                    </umb-box-content>
+                </umb-box>
+            </umb-editor-container>
+            <umb-editor-footer>
+                <umb-editor-footer-content-right>
+                    <umb-button
+                        type="button"
+                        button-style="link"
+                        label-key="general_close"
+                        action="model.close()">
+                    </umb-button>
+                    <umb-button
+                        type="submit"
+                        button-style="success"
+                        label-key="general_submit">
+                    </umb-button>
+                </umb-editor-footer-content-right>
+            </umb-editor-footer>
+        </umb-editor-view>
+    </form>
+</div>

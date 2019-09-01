@@ -1,0 +1,48 @@
+﻿<div class="sky-map-editor" ng-controller="Skybrud.Maps.Controller">
+    
+    <div class="toolbar">
+        <div class="types">
+            <div ng-if="!current">
+                <button type="button" class="btn btn-default" ng-click="draw(ct)" ng-repeat="ct in contentTypes">
+                    <i class="icon {{ct.icon}}"></i>
+                    {{ct.name}}
+                </button>
+            </div>
+            <div ng-if="current">
+                <button type="button" ng-click="cancel();" class="btn btn-default">Cancel</button>
+                <button type="button" ng-click="confirm();" class="btn btn-primary" ng-disabled="!current.$valid">Complete</button>
+            </div>
+        </div>
+        <!--<div class="actions">
+            <button type="button" ng-click="downloadKml();" class="btn btn-primary">Download KML</button>
+            <button type="button" ng-click="toggleFullscreen();" class="btn btn-primary">Fullscreen</button>
+        </div>-->
+    </div>
+    
+    <div class="map"><div></div></div>
+    
+    <table class="table list">
+        <tr ng-repeat="item in model.value.items">
+            <td style="white-space: nowrap;">
+                <i class="icon {{ct(item).icon}}"></i>
+                <strong>{{ct(item).name}}</strong>
+            </td>
+            <td style="width: 100%;">
+                <em ng-show="!item.properties.elementName">Untitled</em>
+                <strong ng-show="item.properties.elementName">{{item.properties.elementName}}</strong>
+            </td>
+            <td style="white-space: nowrap;">
+                <a href="#" prevent-default ng-click="editGeometry(item)">Edit geometry</a>
+                <span ng-show="!fullscreen">
+                    &bull;
+                    <a href="#" prevent-default ng-click="editContent(item)">Edit content</a>
+                </span>
+                &bull;
+                <a href="#" prevent-default ng-click="delete($index)">Delete</a>
+            </td>
+        </tr>
+    </table>
+    
+    <!--<pre style="font-size: 9px; line-height: 11px;">{{model.value | json}}</pre>-->
+
+</div>
